@@ -1,0 +1,17 @@
+OUTPUT=hello
+OBJ= hello.o hello2.o
+CFLAGS = -Wall -c
+LDFLAGS = 
+
+all: build
+	echo "Done"
+
+build: $(OBJ)
+	gcc $(LDFLAGS) -o $(OUTPUT) $(OBJ) 
+
+%.o: %.c
+	gcc $(CFALGS) $<
+
+clean:
+	rm -f $(OBJ)
+	rm -f $(OUTPUT)
